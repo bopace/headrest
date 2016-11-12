@@ -1,25 +1,21 @@
 {
-  "name": "headrest",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "phonegap-template-hello-world",
+  "version": "4.0.3",
+  "description": "> A Hello World template built with PhoneGap",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bopace/headrest.git"
+    "url": "https://github.com/phonegap/phonegap-app-hello-world.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "PhoneGap Team",
+  "license": "Apache-2.0",
+  "keywords": [
+    "ecosystem:phonegap",
+    "ecosystem:cordova",
+    "cordova:template",
+    "phonegap:template"
+  ],
   "bugs": {
-    "url": "https://github.com/bopace/headrest/issues"
+    "url": "https://github.com/phonegap/phonegap-app-hello-world/issues"
   },
-  "homepage": "https://github.com/bopace/headrest#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-stormpath": "^3.1.6"
-  }
+  "homepage": "https://github.com/phonegap/phonegap-app-hello-world"
 }
