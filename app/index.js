@@ -21,13 +21,18 @@ const App = React.createClass({
 	updateStateFromStore () {
 		this.setState(HabitStore.getState());
 	},
+	loginAction() {
+		HabitStore.login();
+		this.updateStateFromStore();
+	},
 	renderCurrentPage() {
 		const {currentStreak, loggedIn} = this.state;
 		return loggedIn === true
 			? <MyPage />
-			: <Home />;
+			: <Home loginAction={this.loginAction} />;
 	},
 	render () {
+		console.log(this.state.loggedIn);
 		return (
 			<div>
 				<CSSTransitionGroup

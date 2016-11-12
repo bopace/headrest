@@ -9,11 +9,22 @@ import HabitStore from '../stores/habit';
 
 const MyPage = React.createClass({
     displayName: 'MyPage',
+    buildPage() {
+        if (this.props.answeredQuiz) {
+            return (
+                <h1>Quiz done</h1>
+            );
+        } else {
+            return (
+                <Quiz />
+            );
+        }
+    },
     render: function() {
         return (
             <div className="mypage">
-                <Habit />
-                <Habit />
+                <h1>Welcome, Bo!</h1>
+                {this.buildPage()}
             </div>
         );
     }

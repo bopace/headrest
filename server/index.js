@@ -25,6 +25,9 @@ app.set('view engine', 'ejs');
 app.use(cors());
 app.use(express.static('server/public'));
 app.get('/', (req, res) => res.render('index', getState()));
+app.post('/login', (req, res) => {
+	_loggedIn = true;
+});
 app.post('/habit/add', (req, res) => {
 	if (req.params.habit in _habits) {
 		console.log("Error: habit already exists");

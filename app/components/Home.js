@@ -10,7 +10,7 @@ import HabitStore from '../stores/habit';
 const Home = React.createClass({
     displayName: 'Home',
     login() {
-        HabitStore.login();
+        this.props.loginAction();
     },
     render: function() {
         return (
