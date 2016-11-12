@@ -2,6 +2,7 @@ import React from 'react';
 import Tappable from 'react-tappable';
 
 import Habit from './Habit';
+import Quiz from './Quiz';
 
 import '../css/mypage.css';
 
@@ -16,7 +17,9 @@ const MyPage = React.createClass({
             );
         } else {
             return (
-                <Quiz />
+                <Tappable className="quiz-button">
+                    Take Quiz to Begin
+                </Tappable>
             );
         }
     },
@@ -24,6 +27,7 @@ const MyPage = React.createClass({
         return (
             <div className="mypage">
                 <h1>Welcome, Bo!</h1>
+                <h2>Current streak: {this.props.currentStreak}</h2>
                 {this.buildPage()}
             </div>
         );

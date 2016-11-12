@@ -1,0 +1,11 @@
+.quiz-button {
+    margin: 20px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #2D829A;
+}
+
+.quiz-button:hover, .quiz-button:focus {
+    background-color: #569BAE;
+}
