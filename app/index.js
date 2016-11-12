@@ -5,6 +5,7 @@ import CSSTransitionGroup from 'react-addons-css-transition-group';
 import HabitStore from './stores/habit';
 
 import Home from './components/Home';
+import MyPage from './components/MyPage';
 import Habit from './components/Habit';
 
 const App = React.createClass({
@@ -20,10 +21,22 @@ const App = React.createClass({
 	updateStateFromStore () {
 		this.setState(HabitStore.getState());
 	},
+	renderCurrentPage() {
+		const {currentStreak, loggedIn} = this.state;
+		return loggedIn === true
+			? <MyPage />
+			: <Home />;
+	},
 	render () {
 		return (
 			<div>
-				<Home />
+				<CSSTransitionGroup
+					transitionName="example"
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={500}
+					>
+					{this.renderCurrentPage()}
+				</CSSTransitionGroup>
 			</div>
 		);
 	},

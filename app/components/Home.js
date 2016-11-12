@@ -9,6 +9,9 @@ import HabitStore from '../stores/habit';
 
 const Home = React.createClass({
     displayName: 'Home',
+    login() {
+        HabitStore.login();
+    },
     render: function() {
         return (
             <div className='home'>
@@ -17,11 +20,11 @@ const Home = React.createClass({
                 <Tappable className="signup-button">
                     Sign Up
                 </Tappable>
-                <Tappable className="login-button">
+                <Tappable className="login-button" onTap={this.login}>
                     Login
                 </Tappable>
             </div>
-        )
+        );
     }
 });
 

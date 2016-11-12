@@ -8,6 +8,7 @@ const HabitStore = new Store();
 
 let _userHabits = [];
 let _currentStreak = 1;
+let _loggedIn = false;
 
 const fetchHabitData = (callback) => {
     xhr({
@@ -19,7 +20,8 @@ const fetchHabitData = (callback) => {
         try {
             data = JSON.parse(data);
             const currentStreak = data.currentStreak || 0;
-            callback(null, currentStreak);
+            const loggedIn = data.loggedIn || false;
+            callback(null, {currentStreak, loggedIn});
         } catch(e) {
             console.error('Error: unable to load status data from the API', err, response);
             callback(err);
@@ -31,6 +33,7 @@ HabitStore.extend({
     getState() {
         return {
             currentStreak: _currentStreak,
+            loggedIn: _loggedIn,
         };
     }
 })
