@@ -8,6 +8,8 @@ import Home from './components/Home';
 import MyPage from './components/MyPage';
 import Habit from './components/Habit';
 
+const constants = require('../constants');
+
 const App = React.createClass({
 	getInitialState () {
 		return HabitStore.getState();
@@ -28,7 +30,7 @@ const App = React.createClass({
 	renderCurrentPage() {
 		const {currentStreak, loggedIn} = this.state;
 		return loggedIn === true
-			? <MyPage />
+			? <MyPage currentStreak={12} habits={constants.HABITS} />
 			: <Home loginAction={this.loginAction} />;
 	},
 	render () {

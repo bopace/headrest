@@ -1,0 +1,11 @@
+.habit {
+    margin-bottom: 20px;
+}
+.habitName {
+    font-size: 25px;
+}
+
+.habitStreak {
+    font-size: 18px;
+    color: green;
+}

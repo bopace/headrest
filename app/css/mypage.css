@@ -1,5 +1,5 @@
 .quiz-button {
-    margin: 20px;
+    margin: 40px;
     font-size: 20px;
     padding: 10px;
     border-radius: 8px;
@@ -8,4 +8,8 @@
 
 .quiz-button:hover, .quiz-button:focus {
     background-color: #569BAE;
+}
+
+.habitWrapper {
+    margin-top: 50px;
 }
