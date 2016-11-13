@@ -3,6 +3,8 @@ import Tappable from 'react-tappable';
 
 import '../css/quizquestion.css';
 
+import Answer from './Answer';
+
 const QuizQuestion = React.createClass({
     displayName: 'QuizQuestion',
     getInitialState() {
@@ -14,7 +16,7 @@ const QuizQuestion = React.createClass({
     buildAnswers() {
         let answers = [];
         for (var i = 0; i < answers.length; i++) {
-                let answer = <div className="answer">{this.props.answers[i]}</div>
+                let answer = <Answer answer={this.props.answers[i]} />;
                 answers.push(answer);
         }
         return answers;
