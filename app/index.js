@@ -30,7 +30,7 @@ const App = React.createClass({
 	renderCurrentPage() {
 		const {currentStreak, loggedIn} = this.state;
 		return loggedIn === true
-			? <MyPage currentStreak={12} habits={constants.HABITS} />
+			? <MyPage currentStreak={12} habits={constants.HABITS} quizQuestions={constants.QUESTIONS} />
 			: <Home loginAction={this.loginAction} />;
 	},
 	render () {

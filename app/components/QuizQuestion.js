@@ -11,6 +11,14 @@ const QuizQuestion = React.createClass({
             answers: this.props.answers,
         };
     },
+    buildAnswers() {
+        let answers = [];
+        for (var i = 0; i < answers.length; i++) {
+                let answer = <div className="answer">{this.props.answers[i]}</div>
+                answers.push(answer);
+        }
+        return answers;
+    },
     render: function() {
         return (
             <div className="quizQuestion">
@@ -18,7 +26,7 @@ const QuizQuestion = React.createClass({
                     {this.state.question}
                 </div>
                 <div className="answers">
-                    {this.state.answers}
+                    {this.buildAnswers()}
                 </div>
             </div>
         );

@@ -3,6 +3,8 @@ import Tappable from 'react-tappable';
 
 import '../css/quiz.css';
 
+import QuizQuestion from './QuizQuestion';
+
 import HabitStore from '../stores/habit';
 
 const Quiz = React.createClass({
@@ -14,8 +16,8 @@ const Quiz = React.createClass({
     },
     buildQuiz() {
         let questions = [];
-        for (var i = 0; i < quizQuestions.length; i++) {
-            let question = <QuizQuestion question={quizQuestions[i].question} answers={quizQuestions[i].answers} />
+        for (var i = 0; i < this.state.quizQuestions.length; i++) {
+            let question = <QuizQuestion question={this.state.quizQuestions[i].question} answers={this.state.quizQuestions[i].answers} />
             questions.push(question);
         }
         return questions;
