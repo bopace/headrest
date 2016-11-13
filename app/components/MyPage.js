@@ -14,6 +14,7 @@ const MyPage = React.createClass({
         return {
             currentStreak: this.props.currentStreak,
             habits: this.props.habits,
+            takingQuiz: false,
         };
     },
     buildPage() {
@@ -38,19 +39,32 @@ const MyPage = React.createClass({
         }
         return habitComponents;
     },
+    buildMyPage() {
+        if (this.state.takingQuiz) {
+            return (
+                <Quiz quizQuestions={this.state.quizQuestions} />
+            );
+        } else {
+            return (
+                <div className="mypage">
+                    <h1>Welcome, Bo!</h1>
+                    <h2>Current streak: {this.state.currentStreak}</h2>
+                    <Tappable className="quiz-button">
+                        Retake Quiz
+                    </Tappable>
+                    <div className="habitWrapper">
+                        <h2>My Habits</h2>
+                        <hr/>
+                        {this.buildHabits()}
+                    </div>
+                </div>
+            );
+        }
+    },
     render: function() {
         return (
-            <div className="mypage">
-                <h1>Welcome, Bo!</h1>
-                <h2>Current streak: {this.state.currentStreak}</h2>
-                <Tappable className="quiz-button">
-                    Retake Quiz
-                </Tappable>
-                <div className="habitWrapper">
-                    <h2>My Habits</h2>
-                    <hr/>
-                    {this.buildHabits()}
-                </div>
+            <div className="mypageWrapper">
+                {this.buildMyPage()}
             </div>
         );
     }
